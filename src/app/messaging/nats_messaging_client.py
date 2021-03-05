@@ -48,7 +48,7 @@ class NATSMessagingClient:
         :return:
         """
         try:
-            self._connected = self._connect()
+            self._connected = await self._connect()
             await self._nats_client.publish(
                 subject,
                 json.dumps(message).encode()
@@ -66,7 +66,7 @@ class NATSMessagingClient:
     # REQUEST
     # -----------------------------------------------------------------------------
     async def submit_message_with_response(self, message: dict,
-                                           subject: dict) -> dict or None:
+                                           subject: str) -> dict or None:
         """
         Submits a message that requires a response from the subscriber.
 
@@ -75,7 +75,7 @@ class NATSMessagingClient:
         :return: Response dictionary or None
         """
         try:
-            self._connected = self._connect()
+            self._connected = await self._connect()
             response = await self._nats_client.publish(
                 subject,
                 json.dumps(message).encode()
@@ -110,13 +110,13 @@ class NATSMessagingClient:
     # -------------------------------------------------------------------------
     # METHOD CONNECT
     # -------------------------------------------------------------------------
-    def _connect(self):
+    async def _connect(self):
         """
 
         :return:
         """
         try:
-            self._nats_client.connect(
+            await self._nats_client.connect(
                 servers=[NATS_SERVER]
             )
             return True
