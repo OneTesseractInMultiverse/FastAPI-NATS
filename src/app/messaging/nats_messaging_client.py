@@ -1,4 +1,3 @@
-import asyncio
 import json
 from app.settings import NATS_SERVER
 from app.logging import MicroserviceLogger
