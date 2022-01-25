@@ -41,3 +41,4 @@ class MicroserviceLogger(object):
     @abstractmethod
     def error(self, message: str, **kwargs) -> dict:
         raise NotImplementedError
+
