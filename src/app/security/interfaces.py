@@ -10,4 +10,4 @@ class IdentityCredential(object):
 
     @abstractmethod
     def verify(self, **kwargs):
-        pass
+        raise NotImplementedError

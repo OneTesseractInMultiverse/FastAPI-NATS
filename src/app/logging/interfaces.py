@@ -28,16 +28,17 @@ class MicroserviceLogger(object):
 
     @abstractmethod
     def debug(self, message: str, **kwargs) -> dict:
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def info(self, message: str, **kwargs) -> dict:
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def warning(self, message: str, **kwargs) -> dict:
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def error(self, message: str, **kwargs) -> dict:
-        pass
+        raise NotImplementedError
+
