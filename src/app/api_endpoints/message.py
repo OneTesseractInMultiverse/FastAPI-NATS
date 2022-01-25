@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter
 from app.schemas.message import Message
 from app.messaging.nats_messaging_client import NATSMessagingClient
 from app.logging.syslog_impl import SimpleLogger
