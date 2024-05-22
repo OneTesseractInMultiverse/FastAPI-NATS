@@ -38,7 +38,7 @@ pytest-cov==2.11.1
 python-dotenv==0.15.0
 python-multipart==0.0.5
 PyYAML==5.4.1
-requests==2.31.0
+requests==2.32.0
 Rx==1.6.1
 six==1.15.0
 starlette==0.27.0
